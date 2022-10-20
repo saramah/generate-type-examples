@@ -1,5 +1,5 @@
 # generate-type-examples
-gives you five random english words that are good for demonstrating font characteristics
+gives you five random english words that are good for demonstrating font characteristics. This will make sure that there are ascenders, descenders, rounded letters, and diagonal letters. It will also make sure that the string is only alphabetic (ie no numerals or punctuation) and that it is lowercase.
 
 # Setup
 ```
