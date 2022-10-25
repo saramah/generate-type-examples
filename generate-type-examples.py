@@ -4,6 +4,7 @@ import re
 import random
 
 def is_good_candidate(word):
+    mustHave = "no"
     ascenders = "bdfhkl"
     descenders = "gjpqy"
     diagonals = "krvwxyz"
@@ -15,9 +16,17 @@ def is_good_candidate(word):
     hasOnlyLowercase = word.islower()
     if not hasOnlyLowercase:
         return False
-        
+    
     hasOnlyAlphabeticChars = word.isalpha()
     if not hasOnlyAlphabeticChars:
+        return False
+    
+    hasUniqueLetters = len(set(list(word))) == len(word)
+    if not hasUniqueLetters:
+        return False
+    
+    hasMustHave = re.search(f"[{mustHave}]", word)
+    if not hasMustHave:
         return False
     
     hasAscenders = re.search(f"[{ascenders}]", word)
